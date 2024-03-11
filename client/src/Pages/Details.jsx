@@ -13,7 +13,7 @@ const Details = () => {
   const [project, setProject] = useState(null);
   const [yearKey,setYearKey]=useState([])
   const [error,setError]=useState("")
-
+axios.defaults.withCredentials = true
   useEffect(() => {
   const fetchData = async () => {
     try {

@@ -13,11 +13,11 @@ const Details = () => {
   const [project, setProject] = useState(null);
   const [yearKey,setYearKey]=useState([])
   const [error,setError]=useState("")
-
+axios.defaults.withCredentials = true
   useEffect(() => {
   const fetchData = async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/detail?id=${id}`);
+      const response = await axios.get(`https://gsoc-backend.vercel.app/detail?id=${id}`);
       setProject(response.data);
       const y = Object.keys(response.data?.years || {});
       const year = y.filter(i => i !== "_id");

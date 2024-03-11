@@ -12,7 +12,7 @@ const Home = () => {
   const dispatch = useDispatch();
   const [error,setError]=useState("")
   const { project, search, year, curpage, nextpage, prevpage ,totalPages ,isLoading} = useSelector(state => state.Org);
-
+axios.defaults.withCredentials = true
     const yearFilterOptions = [
         "All",
         "2016",
@@ -30,7 +30,7 @@ const Home = () => {
       useEffect(() => {
         const fetchData = async () => {
           dispatch(updateLoading(true))
-            const url = `http://localhost:8000/search?page=${curpage}&year=${year}&search=${search}`;
+            const url = `https://gsoc-backend.vercel.app/search?page=${curpage}&year=${year}&search=${search}`;
             try {
                 const response = await axios.get(url);
 

@@ -11,8 +11,9 @@ const app = express();
 
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN,
-    Credential: true,
+    origin: ["https://gsoc-frontend.vercel.app"],
+    methods: ["POST","GET"],
+    credential: true,
   })
 );
 app.use(express.json());
@@ -23,6 +24,10 @@ app.get('/update-organizations', updateDB );
 app.get('/search',search);
 
 app.get('/detail',detail)
+
+app.get('/' ,(req,res)=>{
+  res.json("Hi");
+})
 
 
 connectDB()

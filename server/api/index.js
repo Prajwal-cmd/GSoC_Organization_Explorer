@@ -9,13 +9,12 @@ import { detail } from "../src/controllers/Detail.js";
 
 const app = express();
 
-app.use(
-  cors({
-    origin: ["https://gsoc-frontend.vercel.app"],
-    methods: ["POST", "GET"],
-    credentials: true, 
-  })
-);
+app.use(cors({
+  origin: ["https://gsoc-frontend.vercel.app"],
+  methods: ["POST", "GET"],
+  credentials: true,
+}));
+
 
 app.use(express.json());
 

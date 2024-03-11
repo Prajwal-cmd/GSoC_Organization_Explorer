@@ -30,7 +30,7 @@ const Home = () => {
       useEffect(() => {
         const fetchData = async () => {
           dispatch(updateLoading(true))
-            const url = `http://localhost:8000/search?page=${curpage}&year=${year}&search=${search}`;
+            const url = `https://gsoc-backend.vercel.app/search?page=${curpage}&year=${year}&search=${search}`;
             try {
                 const response = await axios.get(url);
 

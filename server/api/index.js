@@ -12,10 +12,11 @@ const app = express();
 app.use(
   cors({
     origin: ["https://gsoc-frontend.vercel.app/"],
-    methods: ["POST","GET"],
-    credential: true,
+    methods: ["POST", "GET"],
+    credentials: true, 
   })
 );
+
 app.use(express.json());
 
 

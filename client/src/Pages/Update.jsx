@@ -4,11 +4,12 @@ import axios from 'axios';
 const Update = () => {
   const [updateMessage, setUpdateMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+axios.defaults.withCredentials = true
 
   useEffect(() => {
     const updateOrganizations = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/update-organizations');
+        const response = await axios.get('https://gsoc-backend.vercel.app/update-organizations');
         console.log('Update successful:', response.data);
         setUpdateMessage('Organizations updated successfully!');
       } catch (error) {

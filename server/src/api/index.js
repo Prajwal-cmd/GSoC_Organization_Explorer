@@ -1,11 +1,11 @@
-import connectDB from "./db/index.js";
+import connectDB from "../db/index.js";
 import "dotenv/config";
 import express from "express";
 import cors from "cors";
-import { Organisation } from "./models/organisations.model.js";
-import { updateDB } from "./controllers/update.js";
-import { search } from "./controllers/Search.js";
-import { detail } from "./controllers/Detail.js";
+import { Organisation } from "../models/organisations.model.js";
+import { updateDB } from "../controllers/update.js";
+import { search } from "../controllers/Search.js";
+import { detail } from "../controllers/Detail.js";
 
 const app = express();
 
